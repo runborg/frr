@@ -496,7 +496,9 @@ end
                   line.startswith("vnc defaults") or
                   line.startswith("vnc l2-group") or
                   line.startswith("vnc nve-group") or
-                  line.startswith("member pseudowire")):
+                  line.startswith("member pseudowire") or
+                  (ctx_keys[0].startswith("key chain") and line.startswith("key "))
+                  ):
                 main_ctx_key = []
 
                 # Save old context first
